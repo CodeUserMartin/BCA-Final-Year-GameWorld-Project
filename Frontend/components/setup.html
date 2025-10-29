@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameWorld | Customize Your Profile</title>
+    <link rel="stylesheet" href="../css/setup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main>
+        <section class="slider-container">
+            <div class="slider-wrapper">
+                <article class="setup-section username-box">
+                    <div class="form-container">
+                        <form>
+                            <h1 class="heading">Username</h1>
+                            <hr class="line">
+                            <div class="input-group">
+                                <input type="text" id="username" name="username" placeholder="" required>
+                                <label for="username">Enter a username here:</label>
+                                <span id="username-status-icon"
+                                    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 18px;"></span>
+                            </div>
+                        </form>
+                    </div>
+                </article> <!--- username box end -->
+
+
+
+
+                <article class="setup-section avatar-box">
+                    <div class="container">
+                        <h1 class="heading">Avatar</h1>
+                        <hr class="line">
+                        <div class="avatar-container" id="avatar-container">
+                            <!-- Avatars will be dynamically added here -->
+                        </div>
+                    </div>
+                </article> <!------- Avatar box end -------->
+
+                <article class="setup-section theme-box">
+                    <div class="container">
+                        <h1 class="heading">Theme</h1>
+                        <hr class="line">
+                        <div class="theme-container" id="theme-container">
+                            <article>
+                                <div class="box box1" title="Crimson Abyss" data-theme="Crimson_Abyss"></div>
+                            </article>
+                            <article>
+                                <div class="box box2" title="Royal Eclipse" data-theme="Royal_Eclipse"></div>
+                            </article>
+                            <article>
+                                <div class="box box3" title="Midnight Void" data-theme="Midnight_Void"></div>
+                            </article>
+                            <article>
+                                <div class="box box4" title="Mystic Aurora" data-theme="Mystic_Aurora"></div>
+                            </article>
+                        </div>
+                    </div>
+                </article> <!---- Theme box End ------->
+            </div>
+        </section>
+
+        <div class="button">
+
+            <!-- From Uiverse.io by ryota1231 -->
+            <button class="animated-button prev-btn" id="prev">
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">P R E V</span>
+                <span class="circle"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- From Uiverse.io by ryota1231 -->
+            <button class="animated-button" id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text" id="text">N E X T</span>
+                <span class="circle"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+
+
+
+        </div>
+
+        <!-- Horizontal Progress Bar (For Desktop) -->
+        <div class="horizontal-bar-container">
+            <div class="horizontal-bar"></div>
+            <div class="horizontal-text">1/3</div>
+        </div>
+
+
+        <!-- Circular Progress Bar (For Mobile) -->
+        <div class="progress-container">
+            <svg width="100" height="100" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+                <circle cx="60" cy="60" r="50" class="progress-bar"></circle>
+            </svg>
+            <div class="progress-text">1/3</div>
+        </div>
+
+        <!-- Model Box -->
+        <div class="message-model" id="message-model">
+            <div class="model">
+                <div class="logo">
+                    <p class="message-logo"><i class="fa-solid fa-circle-check fa-2xl" style="color: #63E6BE;"></i>
+                    </p>
+                </div>
+                <div class="message">
+                    <p class="message-text">Username - Submited</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="username-popup" id="username-popup">
+            <div class="error">
+                <div class="error__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none">
+                        <path fill="#393a37"
+                            d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="username-popup" id="username-check-popup">
+            <div class="error username-check-error">
+                <div class="error__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none">
+                        <path fill="#393a37"
+                            d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <script src="../js/setup.js"></script>
+        <script src="../js/model.js"></script>
+    </main>
+</body>
+
+</html>

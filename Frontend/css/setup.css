@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.circle-progress-white {
+    display: none;
+}
+
+
+:root {
+
+    /* Theme */
+    --CrimsonAbyss: linear-gradient(125deg, rgba(70, 15, 50, 1) 0%, rgba(35, 25, 90, 1) 50%, rgba(5, 110, 130, 1) 100%);
+    --RoyalEclipse: linear-gradient(120deg, rgba(20, 20, 60, 1) 0%, rgba(80, 20, 100, 1) 50%, rgba(10, 10, 10, 1) 100%);
+    --MidnightVoid: linear-gradient(135deg, rgba(30, 30, 46, 1) 0%, rgba(33, 33, 88, 1) 51%, rgba(0, 0, 0, 1) 100%);
+    --MysticAurora: linear-gradient(125deg, rgba(30, 15, 70, 1) 0%, rgba(90, 40, 110, 1) 50%, rgba(10, 130, 150, 1) 100%);
+
+
+    /* Fonts */
+
+    --font: "Jacques Francois Shadow", serif;
+
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background: var(--MidnightVoid);
+    position: relative;
+}
+
+.heading {
+    font-family: var(--font);
+    font-weight: 1000;
+    letter-spacing: 5px;
+    fill: #8E1A1A;
+    text-shadow: 3px 0px #8E1A1A;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    padding: 1em 0 0.5em 0;
+}
+
+
+
+.line {
+    width: 100%;
+    margin: 1.5em 0;
+    background-color: orange;
+    /* color: orange; */
+    height: 4px;
+    border: none;
+}
+
+.form-container {
+    position: relative;
+}
+
+
+form {
+    /* border: 2px solid white; */
+    width: 600px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 1rem;
+
+}
+
+.input-group {
+    padding: 0.5em;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+label {
+    color: black;
+    padding: 0 0.5em;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    pointer-events: none;
+    background-color: white;
+    border-radius: 1em;
+    /* text-transform: uppercase; */
+    transition: all 0.3s ease;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.5em 1.5em;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+
+input:focus {
+    border-color: red;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    top: -5px;
+    left: 5px;
+    color: #aaa;
+}
+
+.form-container {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+}
+
+
+/* -------------------- Username Box Styling ----------------- */
+
+.username-popup {
+    position: absolute;
+    top: 0%;
+    transform: translateY(0px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+
+
+.username-popup.show {
+    transform: translateY(50px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.error {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 320px;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    background: #EF665B;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px -3px #111;
+}
+
+.error__icon {
+    width: 20px;
+    height: 20px;
+    transform: translateY(-2px);
+    margin-right: 8px;
+}
+
+.error__icon path {
+    fill: #fff;
+}
+
+.error__title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+}
+
+.error__close {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.error__close path {
+    fill: #fff;
+}
+
+.username-check-error {
+    width: 210px;
+}
+
+
+/* ---------------- Avatar selection section Styling -------------------- */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 800px;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #000;
+}
+
+.avatar-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
+    padding: 1em;
+    margin: 0.5em;
+}
+
+.avatar-container figure {
+    border-radius: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+figure:hover {
+    border: 2px solid aliceblue;
+}
+
+figure.selected {
+    border: 2px solid aliceblue;
+}
+
+.avatar-heading {
+    text-align: center;
+    color: #fff;
+    padding: 1em 0;
+}
+
+
+/* ---------------------- Theme selection section styling ----------------------- */
+
+
+.theme-heading {
+    text-align: center;
+    color: #fff;
+    padding: 0.5em;
+}
+
+
+.theme-container {
+    /* border: 2px solid white; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1em;
+    padding: 0.5em;
+}
+
+
+.box {
+    background-color: #212121;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 1px solid #000;
+}
+
+.box.selected {
+    border: 2px solid aliceblue;
+}
+
+.box:hover {
+    border: 2px solid aliceblue;
+}
+
+.box1 {
+    background: linear-gradient(125deg, rgba(70, 15, 50, 1) 0%, rgba(35, 25, 90, 1) 50%, rgba(5, 110, 130, 1) 100%);
+}
+
+.box2 {
+    background: linear-gradient(120deg, rgba(20, 20, 60, 1) 0%, rgba(80, 20, 100, 1) 50%, rgba(10, 10, 10, 1) 100%);
+}
+
+.box3 {
+    background: linear-gradient(135deg, rgba(30, 30, 46, 1) 0%, rgba(33, 33, 88, 1) 51%, rgba(0, 0, 0, 1) 100%);
+}
+
+.box4 {
+    background: linear-gradient(125deg, rgba(30, 15, 70, 1) 0%, rgba(90, 40, 110, 1) 50%, rgba(10, 130, 150, 1) 100%);
+}
+
+
+.button {
+    display: flex;
+    gap: 1em;
+    margin: 2em;
+}
+
+
+/* From Uiverse.io by ryota1231 */
+/* From Uiverse.io by mishary_5473 */
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 0 0 2px #622bff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: white;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+    right: 16px;
+}
+
+.animated-button .arr-2 {
+    left: -25%;
+}
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #622bff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: white;
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+    right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+    left: 16px;
+}
+
+.animated-button:hover .text {
+    transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+    fill: white;
+}
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px 622BFF;
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+
+/* Prev Button  */
+
+.prev-btn .arr-1 {
+    /* border: 2px solid red; */
+    right: -25px;
+    top: 10px;
+}
+
+.prev-btn .arr-2 {
+    /* border: 2px solid blue; */
+    left: 13px;
+    top: 10px;
+}
+
+.prev-btn .text {
+    position: relative;
+    z-index: 1;
+    transform: translate(12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.prev-btn:hover .arr-1 {
+    right: 15px;
+}
+
+.prev-btn:hover .arr-2 {
+    left: -25px;
+}
+
+.prev-btn:hover .text {
+    transform: translate(-12px);
+}
+
+
+/* Disbaled Button */
+
+
+.animated-button:disabled {
+    pointer-events: none;
+    /* Disable hover and clicks */
+    opacity: 0.5;
+    /* Make it look disabled */
+}
+
+.animated-button:disabled:hover {
+    box-shadow: none;
+    color: inherit;
+    border-radius: 100px;
+    /* Keep original border-radius */
+}
+
+.animated-button:disabled .arr-1,
+.animated-button:disabled .arr-2 {
+    display: none;
+    /* Hide the arrows */
+}
+
+.animated-button:disabled .circle {
+    display: none;
+    /* Hide the animation circle */
+}
+
+
+/* ------------------- Model Styling ------------------- */
+
+
+.message-model {
+    position: fixed;
+    width: 260px;
+    height: 60px;
+    background: #3d3b3b;
+    top: 90%;
+    right: -80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    padding: 0 0.5em;
+    color: aliceblue;
+    transform: translateY(-50%);
+    transition: right 0.5s ease-in-out;
+    /* opacity: 0; */
+    pointer-events: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.model {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-text {
+    /* border: 2px solid green; */
+    font-size: 0.8rem;
+    padding: 0.5em;
+    text-transform: uppercase;
+    margin: 0 0.2em;
+    letter-spacing: 2px;
+}
+
+/* ------------------ Slider Styling ----------------- */
+
+
+.slider-container {
+    width: 100vw;
+    overflow: hidden;
+    /* height: 70vh; */
+    position: relative;
+    display: flex;
+}
+
+
+.slider-wrapper {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    width: 100vw;
+    /* Each section is 100%, so 3 sections = 300% */
+    transition: transform 0.7s ease-in-out;
+}
+
+.setup-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    /* border: 2px solid red; */
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    gap: 4em;
+    text-transform: uppercase;
+}
+
+.btn {
+    padding: 1em 2em;
+    cursor: pointer;
+}
+
+
+/* --------------- Progress Bar ----------- */
+
+.horizontal-bar-container {
+    display: block;
+    width: 500px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.horizontal-bar {
+    width: 33.3%;
+    height: 100%;
+    background: orange;
+    transition: width 0.7s ease-in-out;
+}
+
+.horizontal-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+
+/* ------------------ Mobile Progress Bar ---------------------- */
+
+
+.progress-container {
+    display: none;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+svg {
+    transform: rotate(-90deg);
+}
+
+.progress-circle {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 8;
+}
+
+.progress-bar {
+    fill: none;
+    width: 33.3%;
+    stroke: orange;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 209;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+
+
+/* --------------------------  Responsive Styling  -------------------------- */
+
+
+/*-------------- Username Styling -------------- */
+
+
+@media screen and (max-width:610px) {
+    form {
+        width: 300px;
+        height: 600px;
+        padding: 0;
+        border: 1px solid #000;
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
+        top: -5px;
+        left: 10px;
+        color: #aaa;
+    }
+}
+
+
+/*-------------- Avatar Styling ---------------- */
+
+@media screen and (max-width: 610px) {
+
+    .container {
+        width: 350px;
+    }
+
+    .avatar-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 611px) and (max-width: 810px) {
+
+    .container {
+        width: 450px;
+    }
+
+    .avatar-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 1em;
+    }
+}
+
+
+/* --------------  Theme Styling  ------------- */
+
+
+@media screen and (max-width: 610px) {
+
+    .container {
+        width: 350px;
+    }
+
+    .theme-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* border: 2px solid red; */
+        margin: 0;
+        padding: 0;
+    }
+
+    .theme-container article {
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5em 0;
+    }
+
+}
+
+@media screen and (min-width: 611px) and (max-width: 810px) {
+
+    .container {
+        width: 450px;
+    }
+
+    .theme-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .theme-container article {
+        /* border: 2px solid red; */
+        margin: 0.5em 0;
+    }
+}
+
+
+/*  ---------------- Progress Bar Responsive --------------- */
+
+
+@media screen and (max-width: 610px) {
+
+    .progress-container {
+        display: block;
+    }
+
+    .horizontal-bar-container {
+        display: none;
+    }
+
+    .animated-button {
+        font-size: 13px;
+    }
+
+    .animated-button svg {
+        width: 20px;
+    }
+}

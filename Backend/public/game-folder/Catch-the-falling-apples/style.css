@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+canvas {
+    background: lightblue;
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+}
+
+/* REMOVE this if no longer needed */
+#gameOver {
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+/* NEW POPUP STYLES */
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: black;
+}
+
+#popup-content h2 {
+    margin-bottom: 20px;
+}
+
+#play-again {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #00cc66;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}

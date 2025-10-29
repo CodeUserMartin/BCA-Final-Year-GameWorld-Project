@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="Crimson Abyss">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameWorld - Loading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+            overflow: hidden;
+            position: relative;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .loader-text {
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #00ffc8;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8;
+            white-space: nowrap;
+        }
+
+        .dots span {
+            opacity: 0;
+            animation: blink 1.2s infinite;
+        }
+
+        .dots span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .line {
+            position: absolute;
+            width: 150px;
+            height: 5px;
+            background: #00ffc8;
+            opacity: 0.1;
+            filter: blur(2px);
+            animation: moveLine 2s linear infinite;
+        }
+
+        @keyframes moveLine {
+            from {
+                transform: translateX(-200px);
+                opacity: 0.2;
+            }
+
+            to {
+                transform: translateX(100vw);
+                opacity: 0;
+            }
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loader-text">
+        Entering GameWorld<span class="dots">
+            <span>.</span><span>.</span><span>.</span>
+        </span>
+    </div>
+
+    <div class="lines">
+        <!-- Generate 30 lines with random positions using JS -->
+    </div>
+
+    <script>
+        const linesContainer = document.querySelector(".lines");
+
+        for (let i = 0; i < 30; i++) {
+            const line = document.createElement("div");
+            line.classList.add("line");
+            line.style.top = `${Math.random() * 100}%`;
+            line.style.animationDuration = `${1 + Math.random() * 1.5}s`;
+            line.style.animationDelay = `${Math.random() * 2}s`;
+            linesContainer.appendChild(line);
+        }
+
+        // Optional: Fade out and redirect after delay
+        setTimeout(() => {
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "../components/index.html"; // Change as needed
+            }, 1000); // match transition duration
+        }, 7000); // show loader for 2.5 sec before fade
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.circle-progress-white {
+    display: none;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(30, 30, 46, 1) 0%, rgba(33, 33, 88, 1) 51%, rgba(0, 0, 0, 1) 100%);
+    position: relative;
+}
+
+
+.line {
+    width: 100%;
+    margin: 1.5em 0;
+    background-color: orange;
+    /* color: orange; */
+    height: 4px;
+    border: none;
+}
+
+
+form {
+    /* border: 2px solid white; */
+    width: 600px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 1rem;
+
+}
+
+.input-group {
+    padding: 0.5em;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+label {
+    color: black;
+    padding: 0 0.5em;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    pointer-events: none;
+    background-color: white;
+    border-radius: 1em;
+    /* text-transform: uppercase; */
+    transition: all 0.3s ease;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.5em 1.5em;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+
+input:focus {
+    border-color: red;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    top: -5px;
+    left: 5px;
+    color: #aaa;
+}
+
+.form-container {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+}
+
+
+/* ---------------- Avatar selection section Styling -------------------- */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 800px;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #000;
+}
+
+.avatar-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
+    padding: 1em;
+    margin: 0.5em;
+}
+
+.avatar-container figure {
+    border-radius: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+figure:hover {
+    border: 2px solid aliceblue;
+}
+
+.avatar-heading {
+    text-align: center;
+    color: #fff;
+    padding: 1em 0;
+}
+
+
+/* ---------------------- Theme selection section styling ----------------------- */
+
+
+.theme-heading {
+    text-align: center;
+    color: #fff;
+    padding: 0.5em;
+}
+
+
+.theme-container {
+    /* border: 2px solid white; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1em;
+    padding: 0.5em;
+}
+
+
+.box {
+    background-color: #212121;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.box:hover {
+    border: 2px solid aliceblue;
+}
+
+.box1 {
+    background-color: rosybrown;
+}
+
+.box2 {
+    background-color: teal;
+}
+
+.box3 {
+    background-color: steelblue;
+}
+
+.box4 {
+    background-color: tomato;
+}
+
+
+/* ---------------- Progress Bar ---------------- */
+
+.progress-bar-white {
+    /* border: 2px solid red; */
+    background-color: #fff;
+    width: 70%;
+    height: 20px;
+    position: relative;
+    border-radius: 1em;
+}
+
+.progress-bar-orange {
+    /* border: 2px solid red; */
+    width: 0%;
+    border-radius: 1em;
+    height: 20px;
+    background-color: orange;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-number {
+    /* border: 2px solid red; */
+    margin: 1em;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+
+
+
+/* From Uiverse.io by ryota1231 */
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 30px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    /* background-color: ; */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #1f387e;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 2em;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #1f387e;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+    right: 16px;
+}
+
+.animated-button .arr-2 {
+    left: -25%;
+}
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #c5e5e4;
+
+    /* border-radius: 50%; */
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translate(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+    right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+    left: 16px;
+}
+
+.animated-button:hover .text {
+    transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+    fill: #1f387e;
+}
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+
+/* ------------------- Model Styling ------------------- */
+
+
+.message-model {
+    position: fixed;
+    width: 260px;
+    height: 60px;
+    background: #3d3b3b;
+    top: 90%;
+    right: -80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    padding: 0 0.5em;
+    color: aliceblue;
+    transform: translateY(-50%);
+    transition: right 0.5s ease-in-out;
+    /* opacity: 0; */
+    pointer-events: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.model {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-text {
+    /* border: 2px solid green; */
+    font-size: 0.8rem;
+    padding: 0.5em;
+    text-transform: uppercase;
+    margin: 0 0.2em;
+    letter-spacing: 2px;
+}
+
+
+
+.slider-container {
+    border: 2px solid red;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* justify-content: space-around; */
+}
+
+
+.slider-wrapper {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.setup-section {
+    width: 100vw;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+}

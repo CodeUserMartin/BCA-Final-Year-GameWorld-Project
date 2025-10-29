@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="Midnight_Void">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile-page.css">
+    <title>GameWorld</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="top-logo">
+                <span class="main">GameWorld</span>
+            </div>
+            <div class="profile">
+                <div class="greetings">
+                    <p>hello<span id="user">User</span></p>
+                </div>
+                <div class="user-avatar" id="user-avatar">
+                    <img src="" alt="user-avatar">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 class="main-heading">GameWorld - Explore and Play Exciting Games</h1>
+
+        <section class="custom-game-container">
+            <!-- Custom games will be dynamically added here -->
+        </section>
+
+        <hr class="line">
+        <h2 class="sub-heading">Browse More Games</h2>
+        <section class="embeed-game-container" id="embedded-container">
+            <!-- Games to be added dynamically -->
+        </section>
+
+        <!-- Embed area -->
+        <div id="gamePlayer" class="game-player">
+            <hr>
+            <h2 class="game-title"> Now Playing 🎮: <span id="currentGameName"></span></h2>
+            <div class="game-close">
+                <button class="learn-more" onclick="closeGame()">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Close Game</span>
+                </button>
+            </div>
+            <iframe id="gameIframe" width="100%" height="600px" style="border:none; border-radius: 12px;"
+                allowfullscreen loading="lazy"></iframe>
+        </div>
+
+
+    </main>
+    <footer>
+        <p class="copy-rights">&copy; 2025 GameWorld. All rights reserved.</p>
+    </footer>
+
+    <!---------------------- Logout Button -------------------------->
+    <div class="logout" id="logout">
+        <button class="Btn">
+
+            <div class="sign"><svg viewBox="0 0 512 512">
+                    <path
+                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                    </path>
+                </svg></div>
+
+            <div class="text">Logout</div>
+        </button>
+    </div>
+    <!---------------------- Logout Button End -------------------------->
+
+
+    <!------------------- Profile page  --------------------------->
+
+    <section class="profile-page" id="profile-page">
+        <div class="top-layer">
+            <h2 class="profile-heading">Your Profile</h2>
+            <img src="../img/close.png" alt="close-btn" id="close-btn">
+        </div>
+
+        <!-- Username shown but not clickable -->
+        <div class="username-display">
+            <p>Username: <span id="username">RahulPlazz</span></p>
+        </div>
+
+        <!-- Clickable buttons -->
+        <div class="profile-buttons-grid">
+            <article>
+                <button class="animation" id="gameplayedOptionBtn">Game Played</button>
+            </article>
+            <!-- <article>
+                <button class="animation" id="achievementOptionBtn">Achievements</button>
+            </article> -->
+            <article>
+                <button class="animation" id="changeAvatarOptionBtn">Change Avatar</button>
+            </article>
+            <article>
+                <button class="animation" id="changeThemeOptionBtn">Change Theme</button>
+            </article>
+        </div>
+
+        <!-- User Greetings -->
+        <div class="user-level-display">
+                <span>Happyyyy Gaminggg!!</span>
+        </div>
+    </section>
+
+
+    <!-- Game played Section  -->
+
+    <section class="game-played-section" id="game-played-section">
+        <button class="go-back" id="games-played-go-back">
+            <b>Go back!</b>
+        </button>
+        <h2>Past Games played</h2>
+        <article class="game-container" id="past-games-container">
+            <!-- Past games will be here -->
+        </article>
+    </section>
+
+    <!-- Game played Section End -->
+
+    <!-- Avatar Section  -->
+    <section class="avatar-section" id="avatar-section">
+        <button class="go-back" id="avatar-go-back">
+            <b>Go back!</b>
+        </button>
+        <h2>Select a Avatar</h2>
+        <div class="avatar-container" id="avatar-container">
+            <!-- Fetching avatars from the backend and placing them here -->
+        </div>
+        <button class="submit-btn" id="confirm-avatar-update-btn">
+            Submit
+        </button>
+    </section>
+    <!-- Avatar Section End-->
+
+
+    <!-- Theme Section  -->
+
+    <section class="theme-section" id="theme-section">
+        <button class="go-back" id="theme-go-back">
+            <b>Go back!</b>
+        </button>
+        <h2>Choose a Theme</h2>
+        <div class="theme-container" id="theme-container">
+            <article>
+                <div class="box box1" title="Crimson Abyss" data-theme="Crimson_Abyss"></div>
+            </article>
+            <article>
+                <div class="box box2" title="Royal Eclipse" data-theme="Royal_Eclipse"></div>
+            </article>
+            <article>
+                <div class="box box3" title="Midnight Void" data-theme="Midnight_Void"></div>
+            </article>
+            <article>
+                <div class="box box4" title="Mystic Aurora" data-theme="Mystic_Aurora"></div>
+            </article>
+        </div>
+        <button class="submit-btn" id="confirm-theme-update-btn">
+            Submit
+        </button>
+    </section>
+
+
+    <script src="../js/main.js"></script>
+    <script src="../js/fetch-games.js"></script>
+    <!-- <script src="js/game.js"></script> -->
+    <script src="../js/profile-page.js"></script>
+    <script src="../js/profile-update.js"></script>
+    <script src="../js/logout.js"></script>
+
+</body>
+
+</html>

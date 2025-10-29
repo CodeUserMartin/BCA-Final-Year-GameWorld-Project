@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameWorld | Username </title>
+    <link rel="stylesheet" href="../css/setup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main>
+        <div class="form-container">
+            <form action="/submit-username" method="post">
+                <h1>Username</h1>
+                <hr class="line">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="" required>
+                    <label for="username">Enter a username here:</label>
+                </div>
+
+                <!-- From Uiverse.io by ryota1231 -->
+                <button class="animated-button" id="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                        </path>
+                    </svg>
+                    <span class="text">N E X T</span>
+                    <span class="circle"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                        </path>
+                    </svg>
+                </button>
+
+            </form>
+            <div class="progress-bar-white">
+                <div class="progress-bar-orange"></div>
+            </div>
+            <div class="progess-number">1/3</div>
+        </div>
+
+        <!-- Mobile View -->
+
+        <div class="circle-progress-white">
+            <span>3/3</span>
+            <div class="circle-progress-orange"></div>
+        </div>
+
+
+        <div class="message-model" id="message-model">
+            <div class="model">
+                <div class="logo">
+                    <p class="message-logo"><i class="fa-solid fa-circle-check fa-2xl" style="color: #63E6BE;"></i></p>
+                </div>
+                <div class="message">
+                    <p class="message-text">Username - Submited</p>
+                </div>
+            </div>
+        </div>
+        <script src="../js/model.js"></script>
+    </main>
+</body>
+
+</html>

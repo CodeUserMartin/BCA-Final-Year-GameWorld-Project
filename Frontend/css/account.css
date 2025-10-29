@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  ---background: linear-gradient(135deg, rgba(30, 30, 46, 1) 0%, rgba(33, 33, 88, 1) 51%, rgba(0, 0, 0, 1) 100%);
+  ---width: 300px;
+  --height: 450px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(---background);
+}
+
+
+/* -------------------   Main Styling   ---------------------------- */
+form {
+  /* border: 2px solid white; */
+  width: var(---width);
+  height: var(--height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+}
+
+h1 {
+  color: white;
+  margin-top: 0.5em;
+}
+
+.line {
+  width: 100%;
+  margin: 1em 0;
+}
+
+
+.input-group {
+  padding: 0.5em;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+label {
+  color: black;
+  padding: 0 0.5em;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  pointer-events: none;
+  background-color: white;
+  border-radius: 1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+
+input:focus {
+  border-color: red;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+  top: -5px;
+  left: 5px;
+  color: #aaa;
+}
+
+
+
+/* Form Border Animation */
+
+
+.form-container {
+  border: 1px solid #000;
+  width: var(---width);
+  height: var(--height);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before,
+.form-container::after {
+  content: "";
+  position: absolute;
+}
+
+.form-container::before {
+  width: 130%;
+  height: 120%;
+  background-image: conic-gradient(red 0deg, transparent 60deg, transparent 180deg, blue 180deg, transparent 240deg);
+  /* background-image: conic-gradient(red 0deg, red 60deg, transparent 120deg, blue 180deg, blue 240deg, transparent 300deg); */
+  z-index: -2;
+  animation: border-animation 4s linear infinite;
+}
+
+@keyframes border-animation {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.form-container::after {
+  inset: 6px;
+  background: var(---background);
+  transition: all 0.4s linear;
+  z-index: -1;
+}
+
+
+
+.go-to a {
+    color: aliceblue;
+    font-size: 1rem;
+    margin: 0.5em;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------  Universe Button CSS  -------------------------------- */
+
+button {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  margin: 1em 0;
+  cursor: pointer;
+}
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transform: rotate(-90deg);
+  transition: 0.2s;
+
+}
+
+button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+  right: 0;
+}

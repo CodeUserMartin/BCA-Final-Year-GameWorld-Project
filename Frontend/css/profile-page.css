@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    /* object-fit: cover; */
+}
+
+body.dark *:not(.profile-page):not(.profile-page *):not(.game-played-section):not(.game-played-section *):not(.achievment-section):not(.achievment-section *):not(.avatar-section):not(.avatar-section *):not(.theme-section):not(.theme-section *) {
+    opacity: 0.3;
+    pointer-events: none;
+    filter: blur(2px);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+
+/* ------------------- Profile-page styling ------------------- */
+
+
+/* Effect */
+
+
+/* From Uiverse.io by ercnersoy */
+.animation {
+    background: #a52121;
+    padding: 15px 50px 10px 30px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    border-radius: 80px;
+    text-transform: uppercase;
+    transition: all .7s ease-in-out;
+    border: none;
+    width: 100%;
+    padding: 1.5em;
+}
+
+.animation:hover:before {
+    width: 79px;
+    height: 79px;
+    transform: translate(34.6pc, -1.8pc);
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2IDE1MS4wNWMtNTkuNjYgMC0xMTYuODggMjMuNjk5LTE1OS4wNiA2NS44ODdzLTY1Ljg4NyA5OS40MDItNjUuODg3IDE1OS4wNmMwIDU5LjY2NCAyMy42OTkgMTE2Ljg4IDY1Ljg4NyAxNTkuMDdzOTkuNDAyIDY1Ljg4NyAxNTkuMDYgNjUuODg3YzM5LjQ4OCAwIDc4LjI4MS0xMC4zOTUgMTEyLjQ4LTMwLjEzNyAzNC4xOTUtMTkuNzQ2IDYyLjU5NC00OC4xNDUgODIuMzQtODIuMzQgMTkuNzQyLTM0LjE5NSAzMC4xMzctNzIuOTg4IDMwLjEzNy0xMTIuNDggMC01OS42Ni0yMy42OTktMTE2Ljg4LTY1Ljg4Ny0xNTkuMDZzLTk5LjQwMi02NS44ODctMTU5LjA3LTY1Ljg4N3ptLTQyLjYyMSAzNDMuMzUtMzMuMTUyLTMzLjU3OCA4NC41ODItODQuODItODQuNTgyLTg0LjgxNiAzMy4zOTEtMzMuNTc4IDExOC4zOSAxMTguMzl6IiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPgo=");
+}
+
+.animation::before {
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMjk1LjQ1IDYwMC45NSAyMjQuOTUtMjI0Ljk1LTIyNC45NS0yMjQuOTUtNjMuODQgNjMuODQgMTYxLjE2IDE2MS4xMS0xNjEuMTYgMTYxLjExeiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4K");
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    background-size: 100%;
+    transform: translate(-34.3pc, 0.2pc);
+}
+
+
+
+/* Go-back  */
+
+.go-back {
+    position: relative;
+    font-size: 1.2em;
+    padding: 0.7em 1.4em;
+    background-color: #BF0426;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5em;
+    color: #DEDEDE;
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+    margin: 1em 0 0 1.5em;
+}
+
+.go-back::before {
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgba(33, 33, 33, 1) 0%, rgba(33, 33, 33, 1) 50%, rgba(150, 4, 31, 1) 50%, rgba(191, 4, 38, 1) 60%);
+    border-radius: 0 0 0.5em 0;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.go-back:hover::before {
+    width: 1.6em;
+    height: 1.6em;
+}
+
+.go-back:active {
+    box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+    transform: translate(0.1em, 0.1em);
+}
+
+
+/* Submit btn  */
+
+.submit-btn {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 1em 0 0 1.5em;
+}
+
+.submit-btn:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+
+/* Main */
+
+.username-display {
+    background-color: #2a2a2a;
+    color: #ccc;
+    padding: 1em 1em;
+    margin-bottom: 1.5em;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-align: center;
+    user-select: none;
+}
+
+
+.profile-page {
+    background: #1f1f1f;
+    border-radius: 1rem;
+    padding: 2em;
+    width: 95%;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    transform: translate(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.top-layer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5em 0;
+}
+
+.top-layer img {
+    width: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.top-layer img:hover {
+    border: 2px solid white;
+}
+
+.profile-heading {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.profile-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+}
+
+
+
+
+/* Game-played section  */
+
+.game-played-section {
+    background-color: #1f1f1f;
+    /* border: 2px solid red; */
+    width: 95%;
+    height: 90vh;
+    margin: 1em auto;
+    overflow-y: scroll;
+    border-radius: 1rem;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    transform: translate(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.game-played-section h2 {
+    color: #fff;
+    text-align: center;
+    margin: 1em;
+    background-color: #2a2a2a;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.game-container {
+    /* border: 2px solid gold; */
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.game-card {
+    border: 2px solid white;
+    width: 290px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 1em;
+    margin: 10px;
+}
+
+
+/* Achievment section  */
+
+
+.achievment-section {
+    background-color: #1f1f1f;
+    width: 95%;
+    height: 90vh;
+    margin: 1em auto;
+    overflow-y: scroll;
+    border-radius: 1rem;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    transform: translate(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: 2;
+}
+
+.achievment-section h2 {
+    color: #fff;
+    text-align: center;
+    margin: 1em;
+    background-color: #2a2a2a;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.achievment-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 1em;
+}
+
+.achievment-card {
+    border: 2px solid white;
+    color: #fff;
+    width: 290px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 1em;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+
+/* avatar section  */
+
+
+.avatar-section {
+    background-color: #1f1f1f;
+    width: 95%;
+    margin: 1em auto;
+    border-radius: 1rem;
+    padding: 1em;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    transform: translate(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: 2;
+}
+
+.avatar-section h2 {
+    color: #fff;
+    text-align: center;
+    margin: 1em;
+    background-color: #2a2a2a;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.avatar-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
+    padding: 1em;
+    margin: 10px;
+}
+
+.avatar-container>figure {
+    width: 200px;
+    height: 200px;
+}
+
+figure:hover {
+    border: 2px solid aliceblue;
+}
+
+figure.selected {
+    border: 2px solid aliceblue;
+}
+
+
+.theme-section {
+    background-color: #1f1f1f;
+    width: 95%;
+    height: 90vh;
+    margin: 1em auto;
+    border-radius: 1rem;
+    padding: 1em;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    transform: translate(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: 2;
+}
+
+.theme-section h2 {
+    color: #fff;
+    text-align: center;
+    margin: 1em;
+    background-color: #2a2a2a;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.theme-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+
+.box {
+    background-color: #212121;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 1px solid #000;
+}
+
+.box.selected {
+    border: 2px solid aliceblue;
+}
+
+.box:hover {
+    border: 2px solid aliceblue;
+}
+
+.box1 {
+    background: linear-gradient(125deg, rgba(70, 15, 50, 1) 0%, rgba(35, 25, 90, 1) 50%, rgba(5, 110, 130, 1) 100%);
+}
+
+.box2 {
+    background: linear-gradient(120deg, rgba(20, 20, 60, 1) 0%, rgba(80, 20, 100, 1) 50%, rgba(10, 10, 10, 1) 100%);
+}
+
+.box3 {
+    background: linear-gradient(135deg, rgba(30, 30, 46, 1) 0%, rgba(33, 33, 88, 1) 51%, rgba(0, 0, 0, 1) 100%);
+}
+
+.box4 {
+    background: linear-gradient(125deg, rgba(30, 15, 70, 1) 0%, rgba(90, 40, 110, 1) 50%, rgba(10, 130, 150, 1) 100%);
+}
+
+
+
+/* User-level styling  */
+
+.user-level-display {
+    background-color: #2a2a2a;
+    color: #ccc;
+    padding: 1em;
+    margin: 1.5em 0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-align: center;
+    user-select: none;
+}
+
+.outer-layer {
+    width: 100%;
+    height: 20px;
+    background-color: #333;
+    /* outer bg */
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-layer {
+    height: 100%;
+    width: 10%;
+    /* This width will represent user level progress */
+    background: linear-gradient(90deg, #4ade80, #22c55e);
+    /* greenish gradient */
+    transition: width 0.3s ease;
+}
+
+.outer-layer span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    color: white;
+    pointer-events: none;
+    /* So user clicks don't affect the span */
+}

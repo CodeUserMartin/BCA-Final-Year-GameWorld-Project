@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    /* object-fit: cover; */
+}
+
+
+
+html[data-theme="Crimson_Abyss"] {
+
+    --body: linear-gradient(125deg, rgba(70, 15, 50, 1) 0%, rgba(35, 25, 90, 1) 50%, rgba(5, 110, 130, 1) 100%);
+    --font: "Jacques Francois Shadow", serif;
+}
+
+
+html[data-theme="Royal_Eclipse"] {
+
+    --body: linear-gradient(120deg, rgba(20, 20, 60, 1) 0%, rgba(80, 20, 100, 1) 50%, rgba(10, 10, 10, 1) 100%);
+    --font: "Jacques Francois Shadow", serif;
+}
+
+html[data-theme="Midnight_Void"] {
+
+    --body: linear-gradient(135deg, rgba(30, 30, 46, 1) 0%, rgba(33, 33, 88, 1) 51%, rgba(0, 0, 0, 1) 100%);
+    --font: "Jacques Francois Shadow", serif;
+}
+
+html[data-theme="Mystic_Aurora"] {
+
+    --body: linear-gradient(125deg, rgba(30, 15, 70, 1) 0%, rgba(90, 40, 110, 1) 50%, rgba(10, 130, 150, 1) 100%);
+    --font: "Jacques Francois Shadow", serif;
+}
+
+body {
+    background: var(--body);
+    position: relative;
+}
+
+main {
+    /* border: 2px solid red; */
+    margin: 0.5em;
+}
+
+
+nav {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em;
+    padding: 1.5em;
+}
+
+.top-logo {
+    /* border: 2px solid yellow; */
+    padding: 1em;
+}
+
+.profile {
+    /* width: 250px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+    /* border: 2px solid salmon; */
+    background-color: #000;
+    padding: 0.5em 0;
+    border-radius: 10em;
+}
+
+.greetings p {
+    color: rgb(143, 22, 22);
+    font-size: 1.5rem;
+    font-family: var(--font);
+    /* border: 2px solid red; */
+    margin: 10px;
+}
+
+#user {
+    margin: 5px;
+}
+
+.user-avatar {
+    /* border: 2px solid red; */
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar:hover {
+    cursor: pointer;
+}
+
+.main-heading {
+    text-align: center;
+    /* border: 2px solid green; */
+    padding: 0.5em 0;
+    color: #fff;
+}
+
+
+.custom-game-container {
+    /* border: 2px solid pink; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0.5em 0;
+    padding: 1em;
+    gap: 1em;
+}
+
+figure {
+    border: 2px solid black;
+    width: 290px;
+    height: 180px;
+    background-color: burlywood;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+figure:hover {
+    transform: scale(1.1);
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: orange;
+    border: none;
+
+}
+
+.sub-heading {
+    /* border: 2px solid slateblue; */
+    text-align: center;
+    padding: 1em 0;
+    color: #fff;
+}
+
+
+.embeed-game-container {
+    /* border: 2px solid aqua; */
+    margin: 0.5em 0;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.copy-rights {
+    /* border: 2px solid red; */
+    text-align: center;
+    padding: 1em;
+    color: #fff;
+}
+
+
+/* ----------------------------- Login Button CSS -------------------------- */
+
+.logout {
+    position: fixed;
+    right: 2%;
+    bottom: 1%;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign svg {
+    width: 17px;
+}
+
+.sign svg path {
+    fill: white;
+}
+
+/* text */
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+
+/* hover effect button's text */
+.Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+/* button click effect*/
+.Btn:active {
+    transform: translate(2px, 2px);
+}
+
+
+
+/*-------------------- Game area CSS --------------------------- */
+
+.game-player {
+    display: none;
+}
+
+.game-title {
+    margin: 1em 0;
+    color: #fff;
+    /* display: none; */
+}
+
+
+.game-close {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+
+/* CloseButton element from univser.io */
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button.learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: rgb(179, 22, 22);
+    border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button:hover .circle {
+    width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+    background: aliceblue;
+    transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+    color: aliceblue;
+}
+
+.main {
+    color: aliceblue;
+    font-size: 3rem;
+}
+
+
+
+
+
+/* -------------------- Responsive Styling ------------------------------ */
+
+
+@media screen and (max-width: 510px) {
+
+    .custom-game-container,
+    .embeed-game-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        /* border: 2px solid red; */
+        margin: 1em 0.5em;
+        padding: 0.5em;
+        gap: 0.5em;
+        /* width: 100%; */
+    }
+
+    figure {
+        width: 130px;
+        height: 70px;
+        gap: 0.5em;
+    }
+
+}
+
+
+@media screen and (min-width: 511px) and (max-width: 810px) {
+
+    .custom-game-container,
+    .embeed-game-container {
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+        /* border: 2px solid red; */
+        margin: 1em 0.5em;
+        padding: 0.5em;
+    }
+
+    figure {
+        width: 100px;
+        height: 60px;
+        gap: 0.5em;
+    }
+
+
+}
