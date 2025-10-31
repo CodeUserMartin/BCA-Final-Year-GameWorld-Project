@@ -1,7 +1,3 @@
-# Tesing folder structure repo
-
-
-
 # 🎮 GameWorld  
 ### 🧑‍💻 BCA Final Year Project  
 
