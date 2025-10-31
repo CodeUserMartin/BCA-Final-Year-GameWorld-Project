@@ -107,6 +107,7 @@ Once seeding is complete, start your server using:
   <img src="./assets/user-manual/Backend-server-start-command.png" width="450" alt="Backend-server-start-command" />
 </p>
 
+By default, the backend runs on http://localhost:4000
 
 ### 4️⃣ Set Up MongoDB (Local)
 
@@ -120,17 +121,7 @@ Default URL:
 You can also update the connection URL inside your environment file if needed.
 
 
-### 5️⃣ Start the Backend Server
-
-<p align="center">
-  <img src="./assets/user-manual/Backend-server-start-command.png" width="450" alt="npx serve command example" />
-</p>
-
-
-By default, the backend runs on http://localhost:4000
-
-
-### 6️⃣Run the Frontend
+### 5️⃣Run the Frontend
 
 Go back to your project’s frontend directory and run:
 
