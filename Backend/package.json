@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "game gameworld ",
-    "game": "nodemon src/index.js"
+    "game": "nodemon src/index.js",
+    "seed": "node seed.js"
   },
   "author": "Martin M. Patole",
   "license": "ISC",

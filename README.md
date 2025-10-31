@@ -51,7 +51,7 @@ The main objective of **GameWorld** is to create a dynamic platform where users 
 - 🍪 To ensure **JWT cookies** function properly, it is recommended to run the frontend using:
 
 <p align="center">
-  <img src="./assets/user-manuel/Frontend-run-command.png" width="450" alt="npx serve command example" />
+  <img src="./assets/user-manual/Frontend-run-command.png" width="450" alt="npx serve command example" />
 </p>
 
 instead of using the VS Code Live Server, as Live Server does not handle cookies and secure requests correctly.
@@ -66,7 +66,7 @@ Follow the steps below to run **GameWorld** locally 👇
 ### 1️⃣ Clone the Repository
 
 <p align="center">
-  <img src="./assets/user-manuel/Clone-the-Repository-command.png" width="450" alt="npx serve command example" />
+  <img src="./assets/user-manual/Clone-the-Repository-command.png" width="450" alt="Clone-the-Repository-command" />
 </p>
 
 
@@ -75,38 +75,67 @@ Follow the steps below to run **GameWorld** locally 👇
 Navigate to the backend directory and install required packages:
 
 <p align="center">
-  <img src="./assets/user-manuel/Install-Backend-Dependencies-command.png" width="450" alt="npx serve command example" />
+  <img src="./assets/user-manual/Install-Backend-Dependencies-command.png" width="450" alt="Install-Backend-Dependencies-command" />
 </p>
 
 
-### 3️⃣ Set Up MongoDB (Local)
+### 3️⃣ Create Environment File (.env)
+
+Create a new .env file inside your Backend folder and add the following environment variables:
+
+<p align="center">
+  <img src="./assets/user-manual/env -file-data-explaind.png" width="450" alt="env-file-data-explaind" />
+</p>
+
+Example dummy data you can use for testing 👇
+
+<p align="center">
+  <img src="./assets/user-manual/env-file-dummy-data.png" width="450" alt="env-file-dummy-data" />
+</p>
+
+### ⚠️ Note: After setting up your .env file, first run:
+
+<p align="center">
+  <img src="./assets/user-manual/first-backend-command-to-run.png" width="450" alt="first-backend-command-to-run" />
+</p>
+
+This command seeds your database with the necessary dummy data.
+
+Once seeding is complete, start your server using:
+
+<p align="center">
+  <img src="./assets/user-manual/Backend-server-start-command.png" width="450" alt="Backend-server-start-command" />
+</p>
+
+
+### 4️⃣ Set Up MongoDB (Local)
 
 Make sure MongoDB is installed and running locally on your system.
 Default URL:
 
 <p align="center">
-  <img src="./assets/user-manuel/Set-Up-MongoDB-(Local)-String.png" width="450" alt="npx serve command example" />
+  <img src="./assets/user-manual/Set-Up-MongoDB-(Local)-String.png" width="450" alt="npx serve command example" />
 </p>
 
 You can also update the connection URL inside your environment file if needed.
 
 
-### 4️⃣ Start the Backend Server
+### 5️⃣ Start the Backend Server
 
 <p align="center">
-  <img src="./assets/user-manuel/Backend-server-start-command.png" width="450" alt="npx serve command example" />
+  <img src="./assets/user-manual/Backend-server-start-command.png" width="450" alt="npx serve command example" />
 </p>
 
 
 By default, the backend runs on http://localhost:4000
 
 
-### 5️⃣ Run the Frontend
+### 6️⃣Run the Frontend
 
 Go back to your project’s frontend directory and run:
 
 <p align="center">
-  <img src="./assets/user-manuel/Frontend-run-command.png" width="450" alt="npx serve command example" />
+  <img src="./assets/user-manual/Frontend-run-command.png" width="450" alt="npx serve command example" />
 </p>
 
 ⚠️ Use npx serve instead of VS Code Live Server to ensure JWT cookie authentication works correctly.

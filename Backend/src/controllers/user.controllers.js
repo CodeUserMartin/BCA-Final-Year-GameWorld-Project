@@ -26,7 +26,7 @@ const generateAccessTokenAndRefreshToken = async (userId) => {
 
 
 // Signup Handler
-const userSignUp = async (req, res, next) => {
+const userSignUp = async (req, res, next) => {    
 
     try {
 
